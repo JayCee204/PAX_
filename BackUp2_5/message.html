@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAX | Smart Chatbot</title>
+    <link rel="stylesheet" href="message_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <main class="chat-wrapper">
+        <div class="chat-container">
+            <div class="chat-header">P.A.X</div>
+
+            <div class="chat-box" id="chatBox">
+                <div class="bot-message">
+                    Hello! I am P.A.X. How can I help you today?
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Ask PAX about your status...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </main>
+
+     <nav class="bottom-nav">
+            <a href="student.html" class="nav-item active">🏠<span>Home</span></a>
+            <a href="stat.html" class="nav-item">📊<span>Stats</span></a>
+            <a href="#" class="nav-item plus-btn">+</a>
+            <a href="#" class="nav-item">🏆<span>Ranks</span></a>
+            <a href="#" class="nav-item">⚙️<span>Profile</span></a>
+        </nav>
+    </div>
+
+    <script src="message_script.js"></script>
+</body>
+</html>

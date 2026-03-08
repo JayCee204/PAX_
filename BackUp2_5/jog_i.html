@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAX | Pro Sprint</title>
+    <link rel="stylesheet" href="jog_s.css">
+</head>
+<body class="pro-body">
+
+    <div class="sprint-container">
+        <header class="sprint-header">
+            <div class="status-dot"></div>
+            <span>LIVE PERFORMANCE TRACKING</span>
+        </header>
+
+        <section class="main-data">
+            <h1 id="distance-display">0.00</h1>
+            <label>KILOMETERS</label>
+        </section>
+
+        <section class="data-bar">
+            <div class="data-point">
+                <label>TIME</label>
+                <div id="timer-display">00:00</div>
+            </div>
+            <div class="data-divider"></div>
+            <div class="data-point">
+                <label>PACE</label>
+                <div id="pace-display">0'00"</div>
+            </div>
+        </section>
+
+        <div class="map-strip">
+            <canvas id="miniMap"></canvas>
+        </div>
+
+        <footer class="sprint-footer">
+            <button class="stop-trigger" onmousedown="startHold()" onmouseup="cancelHold()">
+                HOLD TO FINISH
+            </button>
+        </footer>
+
+        <div id="summary-overlay" class="overlay">
+            <div class="summary-content">
+                <h3>SESSION COMPLETE</h3>
+                <div class="big-score">92<span>/100</span></div>
+                <p>EFFICIENCY SCORE</p>
+                
+                <div class="metric-grid">
+                    <div class="m-box"><span>PEAK SPEED</span><strong id="peak-speed">--</strong></div>
+                    <div class="m-box"><span>EST. CALS</span><strong id="calories">--</strong></div>
+                </div>
+
+                <div class="ai-coach">
+                    <strong>NEXT TARGET:</strong>
+                    <p id="target-msg">Calculating your recovery curve...</p>
+                </div>
+
+                <button class="done-btn" onclick="location.reload()">RESTART SPRINT</button>
+                <button class="back-btn" onclick="location.student.html">BACK</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="jog.js"></script>
+</body>
+</html>

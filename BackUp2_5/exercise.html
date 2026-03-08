@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAX | Exercise Library</title>
+    <link rel="stylesheet" href="exercise_style.css">
+</head>
+<body class="library-body">
+
+    <div class="app-container">
+        <header class="library-header">
+            <a href="student.html" class="back-btn">←</a>
+            <h2>Movement Index</h2>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="exerciseSearch" placeholder="Search movements (e.g., Squat)..." onkeyup="searchExercises()">
+        </div>
+
+        <div class="filter-scroll">
+            <button class="filter-btn active" onclick="filterCategory('all')">All</button>
+            <button class="filter-btn" onclick="filterCategory('strength')">Strength</button>
+            <button class="filter-btn" onclick="filterCategory('mobility')">Mobility</button>
+            <button class="filter-btn" onclick="filterCategory('cardio')">Cardio</button>
+        </div>
+
+        <section class="exercise-list" id="exerciseContainer">
+            </section>
+    </div>
+
+    <script src="exercise_script.js"></script>
+</body>
+</html>

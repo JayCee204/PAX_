@@ -1,0 +1,135 @@
+body {
+    background-color: black;
+}
+
+/* Medical Report Styles */
+.report-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #000;
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: #444;
+    border-bottom: 1px solid #222;
+    padding-bottom: 10px;
+}
+
+.athlete-id-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.clearance-tag {
+    background: #ceff05;
+    color: #000;
+    padding: 4px 10px;
+    font-weight: 900;
+    font-size: 0.7rem;
+    border-radius: 4px;
+}
+
+.medical-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.med-card {
+    background: #111;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 3px solid #ceff05;
+}
+
+.med-card label { font-size: 0.6rem; color: #666; letter-spacing: 1px; }
+.med-card .value { font-size: 1.8rem; font-weight: bold; margin: 10px 0; }
+.trend { font-size: 0.7rem; color: #ceff05; }
+
+.progress-bar {
+    height: 4px; background: #222; margin-top: 10px;
+}
+.progress-bar .fill { height: 100%; background: #ceff05; }
+
+.biometric-analysis { margin-top: 30px; }
+.analysis-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #222;
+    font-size: 0.8rem;
+}
+
+.status-bar { font-weight: bold; font-size: 0.7rem; }
+.status-bar.high { color: #ceff05; }
+.status-bar.mid { color: #ffa200; }
+
+.download-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #444;
+    color: white;
+    padding: 15px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.brand {
+    color: white;
+    font-size: 30px;
+}
+
+.report-id {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.value {
+    color: white;
+    font-size: 20px;
+}
+
+p {
+    color: white;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 430px;
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    border-top: 1px solid #222;
+}
+
+.nav-item { text-decoration: none; color: #555; font-size: 0.7rem; display: flex; flex-direction: column; align-items: center; }
+.nav-item.active { color: #ceff05; }
+.plus-btn {
+    background: #ceff05;;
+    color: black !important;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2rem;
+    margin-top: -30px;
+    justify-content: center;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
