@@ -262,3 +262,123 @@ input:checked + .slider:before {
 .fa-right-from-bracket {
     color: #888888;
 }
+
+/* --- Global Body Fix --- */
+.risk-page {
+    background-color: #1a1c1e;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* --- Responsive Navbar --- */
+.pax-navbar {
+    background-color: #0B0B0B;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+}
+
+/* Hide menu on very small screens or use flex-wrap */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* In a real app, you'd add a hamburger menu here */
+    }
+    .pax-navbar {
+        padding: 0 15px;
+    }
+}
+
+/* --- Main Container --- */
+.triage-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- AI Script Box (The tricky part) --- */
+.ai-script-box {
+    position: relative; /* Changed from absolute */
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: #111;
+    border: 1px solid #3366ff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    order: -1; /* This moves it ABOVE the player list on mobile */
+}
+
+/* Desktop behavior for AI Script Box */
+@media (min-width: 1100px) {
+    .triage-container {
+        max-width: 500px;
+        position: relative;
+    }
+    .ai-script-box {
+        position: absolute;
+        left: -300px; /* Float to the left of the main card */
+        top: 100px;
+        width: 280px;
+        order: 0;
+    }
+}
+
+/* --- Risk Meter --- */
+.meter-bars {
+    display: flex;
+    gap: 5px;
+}
+
+.bar {
+    flex: 1;
+    padding: 12px 5px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+/* --- Risk Cards --- */
+.risk-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.risk-card {
+    padding: 25px 20px;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.dual-cards {
+    display: flex;
+    gap: 15px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .triage-header h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    
+    .dual-cards {
+        flex-direction: column; /* Stack the two small cards on top of each other */
+    }
+
+    .risk-card.small {
+        width: 100%;
+    }
+}
