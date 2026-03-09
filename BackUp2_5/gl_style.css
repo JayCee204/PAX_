@@ -96,3 +96,117 @@ video {
     50% { opacity: 0.5; }
     100% { opacity: 1; }
 }
+
+/* --- Global Reset & Flex --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px; /* Prevents container hitting edges on mobile */
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 800px; /* Slightly wider for better desktop experience */
+}
+
+/* --- Video Wrapper: Made Fluid --- */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    /* Changed height to aspect-ratio for perfect scaling */
+    aspect-ratio: 16 / 9; 
+    height: auto; 
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border: 2px solid #333;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Controls --- */
+.controls {
+    margin-bottom: 25px;
+}
+
+.btn {
+    padding: 15px 40px;
+    font-size: 16px; /* Slightly smaller for mobile-first */
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: bold;
+    width: auto;
+    min-width: 200px; /* Ensures a good touch target */
+}
+
+/* --- AI Log Panel --- */
+.log-panel {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    height: 200px; /* Slightly taller for readability */
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    border-top: 2px solid #C3F53C; /* Branded accent */
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* For Mobile Phones (Portrait) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .video-wrapper {
+        aspect-ratio: 4 / 3; /* Taller ratio for mobile viewing */
+    }
+
+    .btn {
+        width: 100%; /* Full width buttons on mobile */
+        font-size: 18px;
+        padding: 18px;
+    }
+
+    .log-panel {
+        font-size: 12px;
+        height: 150px;
+    }
+
+    .status {
+        font-size: 10px;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+/* For Tablets and Landscape Mobile */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
