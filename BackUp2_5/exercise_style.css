@@ -102,3 +102,93 @@ h2 {
 
 .exercise-info h4 { margin: 0 0 5px; color: var(--text-white); }
 .exercise-info p { margin: 0; font-size: 0.8rem; color: #888; }
+
+/* --- Base Variables (Ensuring consistency) --- */
+:root {
+    --pax-neon: #ceff05;
+    --card-gray: #1a1a1a;
+    --text-white: #ffffff;
+}
+
+/* --- Layout Container --- */
+.app-container {
+    width: 100%;
+    max-width: 1000px; /* Limits width on large monitors */
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Library Header --- */
+.library-header h2 {
+    font-size: clamp(1.2rem, 5vw, 1.8rem); /* Fluid typography */
+}
+
+/* --- Filter Buttons --- */
+.filter-scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding-bottom: 10px;
+    scrollbar-width: none; /* Firefox hide scrollbar */
+}
+
+/* --- Exercise Grid Logic --- */
+.exercise-list {
+    display: grid;
+    grid-template-columns: 1fr; /* Default: 1 column for mobile */
+    gap: 15px;
+    padding-bottom: 50px;
+}
+
+.exercise-item {
+    background: var(--card-gray);
+    border-radius: 15px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #333;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablet View (2 columns) */
+@media (min-width: 600px) {
+    .exercise-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop View (3 columns) */
+@media (min-width: 992px) {
+    .exercise-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .exercise-item {
+        flex-direction: column; /* Stack animation on top of text for grid look */
+        text-align: center;
+        padding: 20px;
+    }
+
+    .animation-box {
+        width: 100%; /* Make animation box wider on desktop */
+        height: 150px;
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .search-container #exerciseSearch {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .filter-btn {
+        padding: 6px 15px;
+        font-size: 0.85rem;
+    }
+}
