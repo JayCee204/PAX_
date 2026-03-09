@@ -273,3 +273,80 @@ body {
 .fa-right-from-bracket {
     color: #888888;
 }
+
+/* ... Keep your existing general styles ... */
+
+/* 1. Fix the chat container to be fluid instead of fixed 400px */
+.chat-container {
+    width: 90%; /* Fluid width */
+    max-width: 450px; /* Maximum size on desktop */
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80vh; /* Better height control */
+}
+
+/* 2. Style for User Messages (for your JS to use later) */
+.user-message {
+    background-color: #C3F53C;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 10px 10px 0 10px;
+    align-self: flex-end;
+    margin-bottom: 15px;
+    max-width: 80%;
+}
+
+/* 3. RESPONSIVE MEDIA QUERIES */
+
+/* For Tablets and smaller */
+@media (max-width: 768px) {
+    .pax-navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .brand-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* For Mobile Phones */
+@media (max-width: 480px) {
+    .pax-navbar {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 10px;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-menu {
+        order: 3; /* Move menu to the bottom of the nav on mobile */
+        width: 100%;
+        justify-content: center;
+        background: #1a1a1a;
+        padding: 10px 0;
+        border-radius: 8px;
+    }
+
+    .nav-item {
+        font-size: 0.9rem;
+    }
+
+    .chat-container {
+        width: 95%;
+        height: 75vh;
+    }
+
+    .chat-header {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
