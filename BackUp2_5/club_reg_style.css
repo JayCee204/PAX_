@@ -107,3 +107,63 @@ section:hover img { filter: grayscale(0%); transform: scale(1.03); }
 .c-link.email:hover i { color: #ceff05; }
 .c-link.whatsapp:hover i { color: #25D366; }
 .c-link.phone:hover i { color: #00f2ff; }
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+@media (max-width: 768px) {
+    /* Stack sections vertically */
+    section {
+        flex-direction: column;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    /* Reverse order for the Intel section so text stays above image on mobile */
+    .info-intel {
+        flex-direction: column-reverse;
+    }
+
+    .hero-text, .intel-text {
+        flex: 1;
+        margin-bottom: 30px;
+    }
+
+    .pax-logo-lg {
+        font-size: 3rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Grid for contact methods */
+    .contact-methods {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .c-link {
+        width: 100%; /* Take full width on mobile */
+        max-width: 320px;
+        padding: 20px;
+    }
+
+    .global-back-link {
+        background: rgba(0,0,0,0.8);
+        padding: 10px;
+        border-radius: 5px;
+        backdrop-filter: blur(5px);
+    }
+}
+
+/* Small phones adjustment */
+@media (max-width: 480px) {
+    .pax-logo-lg {
+        font-size: 2.5rem;
+    }
+    
+    section p {
+        font-size: 0.85rem;
+    }
+}
