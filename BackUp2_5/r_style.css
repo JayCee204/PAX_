@@ -102,3 +102,46 @@ th, td { padding: 15px 20px; border-bottom: 1px solid #e2e8f0; }
     color: #C3F53C;
     margin-bottom: 10px;
 }
+
+/* --- RESPONSIVE TABLE FIX --- */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scroll */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap; /* Prevents text from wrapping, keeping columns neat */
+    min-width: 600px; /* Forces the table to be at least this wide on mobile */
+}
+
+/* --- RESPONSIVE KPI CARDS --- */
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* More space for the content on small phones */
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .kpi-wrapper {
+        grid-template-columns: 1fr; /* Stack cards vertically on small phones */
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    /* Make the logo font smaller on mobile */
+    .logo-area h1 {
+        font-size: 20px;
+    }
+}
