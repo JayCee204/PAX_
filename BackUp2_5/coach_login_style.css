@@ -93,3 +93,65 @@
     color: #888;
     margin-bottom: 40px;
 }
+
+/* --- RESPONSIVE UPDATES --- */
+
+/* 1. Ensure the container doesn't hit the screen edges on mobile */
+.login-container {
+    width: 90%; /* Use 90% of the screen width on small devices */
+    max-width: 400px; /* Keep the original size on desktops */
+    margin: 20px; /* Space around the box if it grows long */
+    padding: 30px; /* Slightly reduced padding for more space */
+    transition: all 0.3s ease;
+}
+
+/* 2. Media Query for Tablets and Mobile */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 25px 20px; /* Tighter padding on mobile */
+    }
+
+    .brand-text {
+        font-size: 1.5rem; /* Slightly smaller logo text */
+    }
+
+    .login-header h2 {
+        font-size: 1.1rem; /* Shrink heading to prevent wrapping issues */
+        letter-spacing: 1px;
+    }
+
+    .login-header p {
+        font-size: 0.8rem;
+    }
+
+    .login-btn {
+        padding: 12px; /* Smaller button for better proportion */
+        font-size: 0.9rem;
+    }
+
+    /* Adjust the success notification for mobile */
+    .notification {
+        width: 90%;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(-150%);
+        top: 10px;
+    }
+
+    .notification.show {
+        right: auto;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* 3. Handle short screens (Landscape mode) */
+@media (max-height: 600px) {
+    .login-page {
+        height: auto;
+        padding: 40px 0;
+    }
+    
+    .login-container {
+        margin-top: 20px;
+    }
+}
